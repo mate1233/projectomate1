@@ -164,7 +164,7 @@ function revisar() {
               }
               resto = division%16;
               division = parseInt(division/16);
-              resultado = resto+""+resultado;
+              resultado = resto+" "+resultado;
             }
             console.log(resultado,division);
             alert(resultado,division);
