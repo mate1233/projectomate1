@@ -4,6 +4,10 @@ let opcion1 = document.getElementById('opcionEntrada');
 let opcion2 = document.getElementById('opcionSalida');
 let contador = null;
 let continuar = false;
+let salir = false;
+let resultado = "";
+let division = 0;
+let resto = 0;
 
 form.onsubmit = (event) => {
   event.preventDefault();
@@ -30,6 +34,7 @@ function revisar() {
         continuar = true;
       } else {
         alert("Pare");
+        continuar = false;
       }
       break;
     case "2":
@@ -44,6 +49,7 @@ function revisar() {
         continuar = true;
       } else {
         alert("Pare");
+        continuar = false;
       }
       break;
     case "3":
@@ -58,6 +64,7 @@ function revisar() {
         continuar = true;
       } else {
         alert("Pare");
+        continuar = false;
       }
       break;
     case "4":
@@ -72,13 +79,14 @@ function revisar() {
         continuar = true;
       } else {
         alert("Pare");
+        continuar = false;
       }
       break;
     default:
       alert("Error");
       break;
   }
-  if (contenido.value != ""){
+
     switch(opcion2.value){
       case "5":
         if (continuar) {
@@ -92,10 +100,10 @@ function revisar() {
           if (opcion1.value === "2") {
             alert("ya esta en esta base");
           } else {
-            let salir = true;
-            let resultado = "";
-            let division = parseInt(contenido.value);
-            let resto = 0
+            salir = true;
+            resultado = "";
+            division = parseInt(contenido.value);
+            resto = 0
             while (salir) {
               for (let h = 0; h < 8; h++) {
                 if (parseInt(division)===h) {
@@ -116,6 +124,25 @@ function revisar() {
         if (continuar===true) {
           if (opcion1.value === "3") {
             alert("ya esta en esta base");
+          } else {
+            salir = true;
+            resultado = "";
+            division = parseInt(contenido.value);
+            while (salir) {
+              if (parseInt(division/2)===0) {
+                alert("termino");
+                salir = false;
+              }
+              if (division%2==0) {
+                resultado = "0"+resultado;
+                division = parseInt(division/2);
+              } else {
+                resultado = "1"+resultado;
+                division = parseInt(division/2);
+              }
+            }
+          console.log(resultado,division);
+          alert(resultado,division);
           }
         }
         break;
@@ -130,5 +157,5 @@ function revisar() {
         alert("Error");
         break;
     }
-  }
+
 }
