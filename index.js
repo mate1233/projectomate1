@@ -163,8 +163,37 @@ function revisar() {
                 }
               }
               resto = division%16;
+              let letra = "";
               division = parseInt(division/16);
-              resultado = resto+" "+resultado;
+              switch (resto) {
+                case 10:
+                  letra = "A";
+                  resultado = letra+""+resultado;
+                  break;
+                case 11:
+                  letra = "B";
+                  resultado = letra+""+resultado;
+                  break;
+                case 12:
+                  letra = "C";
+                  resultado = letra+""+resultado;
+                  break;
+                case 13:
+                  letra = "D";
+                  resultado = letra+""+resultado;
+                  break;
+                case 14:
+                  letra = "E";
+                  resultado = letra+""+resultado;
+                  break;
+                case 15:
+                  letra = "F";
+                  resultado = letra+""+resultado;
+                  break;
+                default:
+                  resultado = resto+""+resultado;
+                  break;
+              }
             }
             console.log(resultado,division);
             alert(resultado,division);
