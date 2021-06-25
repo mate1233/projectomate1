@@ -150,6 +150,22 @@ function revisar() {
         if (continuar===true) {
           if (opcion1.value === "4") {
             alert("ya esta en esta base");
+          } else {
+            salir = true;
+            resultado = "";
+            division = parseInt(contenido.value);
+            let resto = 0;
+            while (salir) {
+              for (let j = 1; j < 16; j++) {
+                if (parseInt(division)===j) {
+                  alert("termino");
+                  salir = false;
+                }
+              }
+              resto = division%16;
+              division = parseInt(division - resto/16)
+              resultado = resto+" "+resultado
+            }
           }
         }
         break;
