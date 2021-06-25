@@ -166,6 +166,8 @@ function revisar() {
               division = parseInt(division - resto/16)
               resultado = resto+" "+resultado
             }
+            console.log(resultado,division);
+            alert(resultado,division);
           }
         }
         break;
