@@ -92,7 +92,7 @@ function revisar() {
         if (opcion1.value === "1") {
           alert("ya esta en esta base");
         } else {
-          if (opcion1.value == "2") {
+          if (opcion1.value == "3") {
             resultado = "";
             let suma = 0;
             let multiplicar = 1;
@@ -104,7 +104,7 @@ function revisar() {
                 }
               } else {
                 if (contenido.value[p]==1) {
-                  for (let l = 1; l = p; p++) {
+                  for (let l = 1; l == p; p++) {
                     multiplicar = multiplicar * 2;
                   }
                   suma = suma+multiplicar;
