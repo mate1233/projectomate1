@@ -93,21 +93,17 @@ function revisar() {
           alert("ya esta en esta base");
         } else {
           if (opcion1.value == "3") {
-            resultado = "";
             let suma = 0;
             let multiplicar = 1;
             for (let p = 0; p < contenido.value.length; p++) {
-              multiplicar = 1;
-              if (p == contenido.value.length-1) {
-                if (contenido.value[p]==1) {
-                  suma = suma + 1;
-                }
+              if (contenido.value[p]==1 && p == contenido.value.length-1) {
+                suma = suma + 1;
               } else {
                 if (contenido.value[p]==1) {
-                  for (let l = 1; l == p; p++) {
+                  for (let t = 0; t < p+1; t++) {
                     multiplicar = multiplicar * 2;
                   }
-                  suma = suma+multiplicar;
+                  suma = suma + multiplicar;
                 }
               }
             }
