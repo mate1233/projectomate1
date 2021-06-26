@@ -86,7 +86,7 @@ function revisar() {
       alert("Error");
       break;
   }
-
+  if (opcion1.value == "1"){
     switch(opcion2.value){
       case "5":
         if (continuar) {
@@ -204,5 +204,5 @@ function revisar() {
         alert("Error");
         break;
     }
-
+  }
 }
