@@ -219,7 +219,7 @@ function revisar() {
           let suma = 0
           for (let jk = 0; jk < contenido.value.length; jk++) {
             multiplicar = 1;
-            for (let t = 0; t < jk; jk++){
+            for (let t = 0; t < jk; t++){
               multiplicar = multiplicar * 8
             }
             suma = suma+(parseInt(contenido.value[contenido.value.length-jk+1])*multiplicar)
