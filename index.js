@@ -86,145 +86,272 @@ function revisar() {
       alert("Error");
       break;
   }
-  switch(opcion2.value){
-    case "5":
-      if (continuar) {
-        if (opcion1.value === "1") {
-          alert("ya esta en esta base");
-        } else {
-          if (opcion1.value == "3") {
-            let suma = 0;
-            let multiplicar = 1;
-            for (let p = 0; p < contenido.value.length; p++) {
-              if (contenido.value[p]==1 && p == contenido.value.length-1) {
-                suma = suma + 1;
-              } else {
-                if (contenido.value[p]==1) {
-                  for (let t = 0; t < p+1; t++) {
-                    multiplicar = multiplicar * 2;
+  if (opcion1.value == "1"){
+    switch(opcion2.value){
+      case "5":
+        if (continuar) {
+          if (opcion1.value === "1") {
+            alert("ya esta en esta base");
+          }
+        }
+        break;
+      case "6":
+        if (continuar===true) {
+          if (opcion1.value === "2") {
+            alert("ya esta en esta base");
+          } else {
+            if (opcion1.value == "1"){
+              salir = true;
+              resultado = "";
+              division = parseInt(contenido.value);
+              resto = 0
+              while (salir) {
+                for (let h = 0; h < 8; h++) {
+                  if (parseInt(division)===h) {
+                    alert("termino");
+                    salir = false;
                   }
-                  suma = suma + multiplicar;
                 }
+                resto = division%8;
+                division = parseInt(division/8);
+                resultado = resto+""+resultado;
               }
+              console.log(resultado,division);
+              alert(resultado,division);
             }
-            console.log(suma);
           }
         }
-      }
-      break;
-    case "6":
-      if (continuar===true) {
-        if (opcion1.value === "2") {
-          alert("ya esta en esta base");
-        } else {
-          if (opcion1.value == "1"){
-            salir = true;
-            resultado = "";
-            division = parseInt(contenido.value);
-            resto = 0
-            while (salir) {
-              for (let h = 0; h < 8; h++) {
-                if (parseInt(division)===h) {
+        break;
+      case "7":
+        if (continuar===true) {
+          if (opcion1.value === "3") {
+            alert("ya esta en esta base");
+          } else {
+            if (opcion1.value == "1") {
+              salir = true;
+              resultado = "";
+              division = parseInt(contenido.value);
+              while (salir) {
+                if (parseInt(division/2)===0) {
                   alert("termino");
                   salir = false;
                 }
+                if (division%2==0) {
+                  resultado = "0"+resultado;
+                  division = parseInt(division/2);
+                } else {
+                  resultado = "1"+resultado;
+                  division = parseInt(division/2);
+                }
               }
-              resto = division%8;
-              division = parseInt(division/8);
-              resultado = resto+""+resultado;
+              console.log(resultado,division);
+              alert(resultado,division);
             }
-            console.log(resultado,division);
-            alert(resultado,division);
           }
         }
-      }
-      break;
-    case "7":
-      if (continuar===true) {
-        if (opcion1.value === "3") {
-          alert("ya esta en esta base");
-        } else {
-          if (opcion1.value == "1") {
-            salir = true;
-            resultado = "";
-            division = parseInt(contenido.value);
-            while (salir) {
-              if (parseInt(division/2)===0) {
-                alert("termino");
-                salir = false;
+        break;
+      case "8":
+        if (continuar===true) {
+          if (opcion1.value === "4") {
+            alert("ya esta en esta base");
+          } else {
+            if (opcion1.value == "1") {
+              salir = true;
+              resultado = "";
+              division = parseInt(contenido.value);
+              let resto = 0;
+              while (salir) {
+                for (let j = 1; j < 16; j++) {
+                  if (parseInt(division)===j) {
+                    alert("termino");
+                    salir = false;
+                  }
+                }
+                resto = division%16;
+                let letra = "";
+                division = parseInt(division/16);
+                switch (resto) {
+                  case 10:
+                    letra = "A";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 11:
+                    letra = "B";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 12:
+                    letra = "C";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 13:
+                    letra = "D";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 14:
+                    letra = "E";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 15:
+                    letra = "F";
+                    resultado = letra+""+resultado;
+                    break;
+                  default:
+                    resultado = resto+""+resultado;
+                    break;
+                }
               }
-              if (division%2==0) {
-                resultado = "0"+resultado;
-                division = parseInt(division/2);
-              } else {
-                resultado = "1"+resultado;
-                division = parseInt(division/2);
-              }
+              console.log(resultado,division);
+              alert(resultado,division);
             }
-            console.log(resultado,division);
-            alert(resultado,division);
           }
         }
-      }
-      break;
-    case "8":
-      if (continuar===true) {
-        if (opcion1.value === "4") {
-          alert("ya esta en esta base");
-        } else {
-          if (opcion1.value == "1") {
-            salir = true;
-            resultado = "";
-            division = parseInt(contenido.value);
-            let resto = 0;
-            while (salir) {
-              for (let j = 1; j < 16; j++) {
-                if (parseInt(division)===j) {
+        break;
+      default:
+        alert("Error");
+        break;
+    }
+  }
+  if (opcion1.value == "2"){
+    switch(opcion2.value){
+      case "5":
+        if (continuar) {
+          if (opcion1.value === "1") {
+            alert("ya esta en esta base");
+          } else {
+            if (opcion1.value == "3") {
+              let suma = 0;
+              let multiplicar = 1;
+              for (let p = 0; p < contenido.value.length; p++) {
+                if (contenido.value[p]==1 && p == contenido.value.length-1) {
+                  suma = suma + 1;
+                } else {
+                  if (contenido.value[p]==1) {
+                    for (let t = 0; t < p+1; t++) {
+                      multiplicar = multiplicar * 2;
+                    }
+                    suma = suma + multiplicar;
+                  }
+                }
+              }
+              console.log(suma);
+            }
+          }
+        }
+        break;
+      case "6":
+        if (continuar===true) {
+          if (opcion1.value === "2") {
+            alert("ya esta en esta base");
+          } else {
+            if (opcion1.value == "1"){
+              salir = true;
+              resultado = "";
+              division = parseInt(contenido.value);
+              resto = 0
+              while (salir) {
+                for (let h = 0; h < 8; h++) {
+                  if (parseInt(division)===h) {
+                    alert("termino");
+                    salir = false;
+                  }
+                }
+                resto = division%8;
+                division = parseInt(division/8);
+                resultado = resto+""+resultado;
+              }
+              console.log(resultado,division);
+              alert(resultado,division);
+            }
+          }
+        }
+        break;
+      case "7":
+        if (continuar===true) {
+          if (opcion1.value === "3") {
+            alert("ya esta en esta base");
+          } else {
+            if (opcion1.value == "1") {
+              salir = true;
+              resultado = "";
+              division = parseInt(contenido.value);
+              while (salir) {
+                if (parseInt(division/2)===0) {
                   alert("termino");
                   salir = false;
                 }
+                if (division%2==0) {
+                  resultado = "0"+resultado;
+                  division = parseInt(division/2);
+                } else {
+                  resultado = "1"+resultado;
+                  division = parseInt(division/2);
+                }
               }
-              resto = division%16;
-              let letra = "";
-              division = parseInt(division/16);
-              switch (resto) {
-                case 10:
-                  letra = "A";
-                  resultado = letra+""+resultado;
-                  break;
-                case 11:
-                  letra = "B";
-                  resultado = letra+""+resultado;
-                  break;
-                case 12:
-                  letra = "C";
-                  resultado = letra+""+resultado;
-                  break;
-                case 13:
-                  letra = "D";
-                  resultado = letra+""+resultado;
-                  break;
-                case 14:
-                  letra = "E";
-                  resultado = letra+""+resultado;
-                  break;
-                case 15:
-                  letra = "F";
-                  resultado = letra+""+resultado;
-                  break;
-                default:
-                  resultado = resto+""+resultado;
-                  break;
-              }
+              console.log(resultado,division);
+              alert(resultado,division);
             }
-            console.log(resultado,division);
-            alert(resultado,division);
           }
         }
-      }
-      break;
-    default:
-      alert("Error");
-      break;
+        break;
+      case "8":
+        if (continuar===true) {
+          if (opcion1.value === "4") {
+            alert("ya esta en esta base");
+          } else {
+            if (opcion1.value == "1") {
+              salir = true;
+              resultado = "";
+              division = parseInt(contenido.value);
+              let resto = 0;
+              while (salir) {
+                for (let j = 1; j < 16; j++) {
+                  if (parseInt(division)===j) {
+                    alert("termino");
+                    salir = false;
+                  }
+                }
+                resto = division%16;
+                let letra = "";
+                division = parseInt(division/16);
+                switch (resto) {
+                  case 10:
+                    letra = "A";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 11:
+                    letra = "B";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 12:
+                    letra = "C";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 13:
+                    letra = "D";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 14:
+                    letra = "E";
+                    resultado = letra+""+resultado;
+                    break;
+                  case 15:
+                    letra = "F";
+                    resultado = letra+""+resultado;
+                    break;
+                  default:
+                    resultado = resto+""+resultado;
+                    break;
+                }
+              }
+              console.log(resultado,division);
+              alert(resultado,division);
+            }
+          }
+        }
+        break;
+      default:
+        alert("Error");
+        break;
+    }
   }
 }
