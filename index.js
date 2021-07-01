@@ -215,28 +215,17 @@ function revisar() {
     switch(opcion2.value){
       case "5":
         if (continuar) {
-          if (opcion1.value === "1") {
-            alert("ya esta en esta base");
-          } else {
-            if (opcion1.value == "3") {
-              let suma = 0;
-              let multiplicar = 1;
-              for (let p = 0; p < contenido.value.length; p++) {
-                if (contenido.value[p]==1 && p == contenido.value.length-1) {
-                  suma = suma + 1;
-                } else {
-                  if (contenido.value[p]==1) {
-                    for (let t = 0; t < p+1; t++) {
-                      multiplicar = multiplicar * 2;
-                    }
-                    suma = suma + multiplicar;
-                  }
-                }
-              }
-              console.log(suma);
+          contador2 = 0;
+          let suma = 0
+          for (let jk = 0; jk < contenido.value.length; jk++) {
+            multiplicar = 1;
+            for (let t = 0; t < jk; jk++){
+              multiplicar = multiplicar * 8
             }
+            suma = suma+(int(contenido.value[contenido.value.length-jk+1])*multiplicar)
           }
         }
+        console.log(suma);
         break;
       case "6":
         if (continuar===true) {
