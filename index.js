@@ -223,6 +223,7 @@ function revisar() {
               multiplicar = multiplicar * 8
             }
             suma = suma+(parseInt(contenido.value[contenido.value.length-jk+1])*multiplicar)
+            console.log(suma);
           }
         }
         console.log(suma);
