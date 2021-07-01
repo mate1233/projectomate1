@@ -214,9 +214,9 @@ function revisar() {
   if (opcion1.value == "2"){
     switch(opcion2.value){
       case "5":
+        let suma = 0
         if (continuar) {
           contador2 = 0;
-          let suma = 0
           for (let jk = 0; jk < contenido.value.length; jk++) {
             multiplicar = 1;
             for (let t = 0; t < jk; t++){
