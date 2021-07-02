@@ -273,7 +273,7 @@ function revisar() {
                 break;
             }
           }
-          alert(valor)
+          alert(parseInt(valor))
         }
         break;
       case "8":
