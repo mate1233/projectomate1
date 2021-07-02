@@ -215,6 +215,7 @@ function revisar() {
     switch(opcion2.value){
       case "5":
         let suma = 0
+        let multiplicar = 0
         if (continuar) {
           contador2 = 0;
           for (let jk = 0; jk < contenido.value.length; jk++) {
@@ -230,113 +231,17 @@ function revisar() {
         break;
       case "6":
         if (continuar===true) {
-          if (opcion1.value === "2") {
-            alert("ya esta en esta base");
-          } else {
-            if (opcion1.value == "1"){
-              salir = true;
-              resultado = "";
-              division = parseInt(contenido.value);
-              resto = 0
-              while (salir) {
-                for (let h = 0; h < 8; h++) {
-                  if (parseInt(division)===h) {
-                    alert("termino");
-                    salir = false;
-                  }
-                }
-                resto = division%8;
-                division = parseInt(division/8);
-                resultado = resto+""+resultado;
-              }
-              console.log(resultado,division);
-              alert(resultado,division);
-            }
-          }
+
         }
         break;
       case "7":
         if (continuar===true) {
-          if (opcion1.value === "3") {
-            alert("ya esta en esta base");
-          } else {
-            if (opcion1.value == "1") {
-              salir = true;
-              resultado = "";
-              division = parseInt(contenido.value);
-              while (salir) {
-                if (parseInt(division/2)===0) {
-                  alert("termino");
-                  salir = false;
-                }
-                if (division%2==0) {
-                  resultado = "0"+resultado;
-                  division = parseInt(division/2);
-                } else {
-                  resultado = "1"+resultado;
-                  division = parseInt(division/2);
-                }
-              }
-              console.log(resultado,division);
-              alert(resultado,division);
-            }
-          }
+
         }
         break;
       case "8":
         if (continuar===true) {
-          if (opcion1.value === "4") {
-            alert("ya esta en esta base");
-          } else {
-            if (opcion1.value == "1") {
-              salir = true;
-              resultado = "";
-              division = parseInt(contenido.value);
-              let resto = 0;
-              while (salir) {
-                for (let j = 1; j < 16; j++) {
-                  if (parseInt(division)===j) {
-                    alert("termino");
-                    salir = false;
-                  }
-                }
-                resto = division%16;
-                let letra = "";
-                division = parseInt(division/16);
-                switch (resto) {
-                  case 10:
-                    letra = "A";
-                    resultado = letra+""+resultado;
-                    break;
-                  case 11:
-                    letra = "B";
-                    resultado = letra+""+resultado;
-                    break;
-                  case 12:
-                    letra = "C";
-                    resultado = letra+""+resultado;
-                    break;
-                  case 13:
-                    letra = "D";
-                    resultado = letra+""+resultado;
-                    break;
-                  case 14:
-                    letra = "E";
-                    resultado = letra+""+resultado;
-                    break;
-                  case 15:
-                    letra = "F";
-                    resultado = letra+""+resultado;
-                    break;
-                  default:
-                    resultado = resto+""+resultado;
-                    break;
-                }
-              }
-              console.log(resultado,division);
-              alert(resultado,division);
-            }
-          }
+
         }
         break;
       default:
