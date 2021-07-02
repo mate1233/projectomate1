@@ -200,7 +200,6 @@ function revisar() {
                     break;
                 }
               }
-              console.log(resultado,division);
               alert(resultado,division);
             }
           }
@@ -224,19 +223,57 @@ function revisar() {
               multiplicar = multiplicar * 8
             }
             suma = suma+(parseInt(contenido.value[contenido.value.length-jk-1])*multiplicar)
-            console.log(suma);
           }
         }
-        console.log(suma);
+        alert(suma);
         break;
       case "6":
         if (continuar===true) {
-
+          alert("ya esta en esta base");
         }
         break;
       case "7":
         if (continuar===true) {
-
+          cero = "000";
+          uno = "001";
+          dos = "010";
+          tres = "011";
+          cuatro = "100";
+          cinco = "101";
+          seis = "110";
+          siete = "111";
+          valor = "";
+          for (let jk = 0; jk < contenido.value.length; jk++) {
+            switch (contenido.value[contenido.value.length-jk-1]) {
+              case "0":
+                valor = cero+valor
+                break;
+              case "1":
+                valor = uno+valor
+                break;
+              case "2":
+                valor = dos+valor
+                break;
+              case "3":
+                valor = tres+valor
+                break;
+              case "4":
+                valor = cuatro+valor
+                break;
+              case "5":
+                valor = cinco+valor
+                break;
+              case "6":
+                valor = seis+valor
+                break;
+              case "7":
+                valor = siete+valor
+                break;
+              default:
+                break;
+            }
+          }
+          alert(valor)
         }
         break;
       case "8":
