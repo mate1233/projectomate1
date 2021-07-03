@@ -278,7 +278,118 @@ function revisar() {
         break;
       case "8":
         if (continuar===true) {
-
+          cero = "000";
+          uno = "001";
+          dos = "010";
+          tres = "011";
+          cuatro = "100";
+          cinco = "101";
+          seis = "110";
+          siete = "111";
+          valor = "";
+          for (let jk = 0; jk < contenido.value.length; jk++) {
+            switch (contenido.value[contenido.value.length-jk-1]) {
+              case "0":
+                valor = cero+valor
+                break;
+              case "1":
+                valor = uno+valor
+                break;
+              case "2":
+                valor = dos+valor
+                break;
+              case "3":
+                valor = tres+valor
+                break;
+              case "4":
+                valor = cuatro+valor
+                break;
+              case "5":
+                valor = cinco+valor
+                break;
+              case "6":
+                valor = seis+valor
+                break;
+              case "7":
+                valor = siete+valor
+                break;
+              default:
+                break;
+            }
+          }
+          continuar2 = true;
+          while (continuar2) {
+            if (valor.length%4 == 0){
+              continuar2 = false;
+            } else {
+              valor = "0"+valor;
+            }
+          }
+          contador3 = 0;
+          cont = "";
+          result = "";
+          for (let d = 0; d < valor.length; d++) {
+            contador3++;
+            cont = cont + valor[d];
+            resu = ""
+            if (contador3%4==0) {
+              switch (cont) {
+                case "0000":
+                  resu = "0";
+                  break;
+                case "0001":
+                  resu = "1";
+                  break;
+                case "0010":
+                  resu = "2";
+                  break;
+                case "0011":
+                  resu = "3";
+                  break;
+                case "0100":
+                  resu = "4";
+                  break;
+                case "0101":
+                  resu = "5";
+                  break;
+                case "0110":
+                  resu = "6";
+                  break;
+                case "0111":
+                  resu = "7";
+                  break;
+                case "1000":
+                  resu = "8";
+                  break;
+                case "1001":
+                  resu = "9";
+                  break;
+                case "1010":
+                  resu = "A";
+                  break;
+                case "1011":
+                  resu = "B";
+                  break;
+                case "1100":
+                  resu = "C";
+                  break;
+                case "1101":
+                  resu = "D";
+                  break;
+                case "1110":
+                  resu = "E";
+                  break;
+                case "1111":
+                  resu = "F";
+                  break;
+                default:
+                  break;
+              }
+              result = result + resu;
+              cont = "";
+            }
+          }
+          alert(result);
         }
         break;
       default:
