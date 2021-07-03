@@ -408,7 +408,7 @@ function revisar() {
             contador3 = contador3 + 1
             if (contenido.value[contenido.value.length-i-1] == "1") {
               if (contador != 1){
-                for (var df = 0; df < contador3; df++) {
+                for (var df = 0; df < contador3-1; df++) {
                   multiplicar = multiplicar * 2
                 }
               }
