@@ -9,20 +9,18 @@ let resultado = "";
 let division = 0;
 let resto = 0;
 
-form.onsubmit = (event) => {
+form.onsubmit = (event) => { //Si se preciona el boton enviar, se mostraran por consola lo que el usuario ingreso, junto con las opciones que se hayan elegido
   event.preventDefault();
   console.log(contenido.value);
   console.log(opcion1.value);
   console.log(opcion2.value);
 }
 
-let caracteres = ["!",'"',"#","$"];
+document.getElementById('enviar').addEventListener("click",revisar); //En caso de que se precione un objeto con el id enviar, se iniciara una función llamada revisar
 
-document.getElementById('enviar').addEventListener("click",revisar);
-
-function revisar() {
-  switch(opcion1.value){
-    case "1":
+function revisar() { //Se inicia la función revisar, la cual permite ver si lo que ingreso el usuario corresponde con la base que se marco como primera opción, para luego transformarlo a la base según lo que se marco como segunda opción
+  switch(opcion1.value){ //Se hara diversas acciones dependiendo de lo que el usuario marco como primera opción
+    case "1": //Se verifica si el usuario solo ingreso caracteres correspondientes a la base Decimal
       contador = 0;
       for (let i = 0; i < contenido.value.length; i++) {
         if (contenido.value[i]==="0" || contenido.value[i]==="1" || contenido.value[i]==="2" || contenido.value[i]==="3" || contenido.value[i]==="4" || contenido.value[i]==="5" || contenido.value[i]==="6" || contenido.value[i]==="7" || contenido.value[i]==="8" || contenido.value[i]==="9") {
@@ -36,7 +34,7 @@ function revisar() {
         continuar = false;
       }
       break;
-    case "2":
+    case "2": //Se verifica si el usuario solo ingreso caracteres correspondientes a la base Octal
       contador = 0;
       for (let i = 0; i < contenido.value.length; i++) {
         if (contenido.value[i]==="0" || contenido.value[i]==="1" || contenido.value[i]==="2" || contenido.value[i]==="3" || contenido.value[i]==="4" || contenido.value[i]==="5" || contenido.value[i]==="6" || contenido.value[i]==="7") {
@@ -50,7 +48,7 @@ function revisar() {
         continuar = false;
       }
       break;
-    case "3":
+    case "3": //Se verifica si el usuario solo ingreso caracteres correspondientes a la base Binaria
       contador = 0;
       for (let i = 0; i < contenido.value.length; i++) {
         if (contenido.value[i]==="0" || contenido.value[i]==="1") {
@@ -64,7 +62,7 @@ function revisar() {
         continuar = false;
       }
       break;
-    case "4":
+    case "4": //Se verifica si el usuario solo ingreso caracteres correspondientes a la base Hexadecimal
       contador = 0;
       for (let i = 0; i < contenido.value.length; i++) {
         if (contenido.value[i]==="0" || contenido.value[i]==="1" || contenido.value[i]==="2" || contenido.value[i]==="3" || contenido.value[i]==="4" || contenido.value[i]==="5" || contenido.value[i]==="6" || contenido.value[i]==="7" || contenido.value[i]==="8" || contenido.value[i]==="9" || contenido.value[i]==="A" || contenido.value[i]==="B" || contenido.value[i]==="C" || contenido.value[i]==="D" || contenido.value[i]==="E" || contenido.value[i]==="F") {
@@ -82,16 +80,16 @@ function revisar() {
       alert("Error");
       break;
   }
-  if (opcion1.value == "1"){
-    switch(opcion2.value){
-      case "5":
+  if (opcion1.value == "1"){ //En caso de que se marque la base Decimal, se hara diversas acciones según lo que se marco como segunda opción
+    switch(opcion2.value){ //Se hara diversas acciones dependiendo de lo que el usuario marco como primera opción
+      case "5": //La trasformación no se realiza debido a que lo que ingreso el usuario ya esta en base Decimal
         if (continuar) {
           if (opcion1.value === "1") {
             alert("ya esta en esta base");
           }
         }
         break;
-      case "6":
+      case "6": //Se hace la transfomrción de lo que ingreso el usuario a base Octal
         if (continuar===true) {
           if (opcion1.value === "2") {
             alert("ya esta en esta base");
@@ -118,7 +116,7 @@ function revisar() {
           }
         }
         break;
-      case "7":
+      case "7": //Se hace la transformación de lo que ingreso el usuario a base Binaria
         if (continuar===true) {
           if (opcion1.value === "3") {
             alert("ya esta en esta base");
@@ -146,7 +144,7 @@ function revisar() {
           }
         }
         break;
-      case "8":
+      case "8": //Se hace la transformación de lo que ingreso el usuario a base Hexadecimal
         if (continuar===true) {
           if (opcion1.value === "4") {
             alert("ya esta en esta base");
@@ -206,9 +204,9 @@ function revisar() {
         break;
     }
   }
-  if (opcion1.value == "2"){
+  if (opcion1.value == "2"){ //En caso de que se marque la base Octal, se hara diversas acciones según lo que se marco como segunda opción
     switch(opcion2.value){
-      case "5":
+      case "5": //Se hace la transformación de lo que ingreso el usuario a base Decimal
         let suma = 0
         let multiplicar = 0
         if (continuar) {
@@ -223,12 +221,12 @@ function revisar() {
         }
         alert(suma);
         break;
-      case "6":
+      case "6": //La trasformación no se realiza debido a que lo que ingreso el usuario ya esta en base Octal
         if (continuar===true) {
           alert("ya esta en esta base");
         }
         break;
-      case "7":
+      case "7": //Se hace la transformación de lo que ingreso el usuario a base Binaria
         if (continuar===true) {
           cero = "000";
           uno = "001";
@@ -272,7 +270,7 @@ function revisar() {
           alert(parseInt(valor))
         }
         break;
-      case "8":
+      case "8": //Se hace la transformación de lo que ingreso el usuario a base Hexadecimal
         if (continuar===true) {
           cero = "000";
           uno = "001";
@@ -393,9 +391,9 @@ function revisar() {
         break;
     }
   }
-  if (opcion1.value == "3"){
+  if (opcion1.value == "3"){ //En caso de que se marque la base Binaria, se hara diversas acciones según lo que se marco como segunda opción
     switch(opcion2.value){
-      case "5":
+      case "5": //Se hace la transformación de lo que ingreso el usuario a base Decimal
         if (continuar) {
           contador3 = 0
           suma = 0
@@ -414,7 +412,7 @@ function revisar() {
         }
         alert(suma);
         break;
-      case "6":
+      case "6": //Se hace la transfomrción de lo que ingreso el usuario a base Octal
         if (continuar===true) {
           valor = contenido.value;
           continuar4 = true;
@@ -468,13 +466,13 @@ function revisar() {
           alert(result);
         }
         break;
-      case "7":
+      case "7": //La trsformación no se realiza debido a que lo que ingreso el usuario ya esta en base Binaria
         if (continuar===true) {
             alert("ya esta en esta base");
           }
           alert(parseInt(valor))
         break;
-      case "8":
+      case "8": //Se hace la transformación de lo que ingreso el usuario a base Hexadecimal
         if (continuar===true) {
           valor = contenido.value;
           continuar5 = true;
