@@ -397,4 +397,47 @@ function revisar() {
         break;
     }
   }
+  if (opcion1.value == "3"){
+    switch(opcion2.value){
+      case "5":
+        if (continuar) {
+          contador3 = 0
+          suma = 0
+          for (var i = 0; i < contenido.value.length; i++) {
+            multiplicar = 1
+            contador3 = contador3 + 1
+            if (contenido.value[contenido.value.length-i-1] == "1") {
+              if (contador != 1){
+                for (var df = 0; df < contador3; df++) {
+                  multiplicar = multiplicar * 2
+                }
+              }
+              suma = suma + multiplicar
+            }
+          }
+        }
+        alert(suma);
+        break;
+      case "6":
+        if (continuar===true) {
+
+        }
+        break;
+      case "7":
+        if (continuar===true) {
+
+          }
+          alert(parseInt(valor))
+        }
+        break;
+      case "8":
+        if (continuar===true) {
+
+        }
+        break;
+      default:
+        alert("Error");
+        break;
+    }
+  }
 }
