@@ -30,10 +30,9 @@ function revisar() {
         }
       }
       if (contador === contenido.value.length){
-        alert("Siga");
         continuar = true;
       } else {
-        alert("Pare");
+        alert("Ocurrio un error");
         continuar = false;
       }
       break;
@@ -45,10 +44,9 @@ function revisar() {
         }
       }
       if (contador === contenido.value.length){
-        alert("Siga");
         continuar = true;
       } else {
-        alert("Pare");
+        alert("Ocurrio un error");
         continuar = false;
       }
       break;
@@ -60,10 +58,9 @@ function revisar() {
         }
       }
       if (contador === contenido.value.length){
-        alert("Siga");
         continuar = true;
       } else {
-        alert("Pare");
+        alert("Ocurrio un error");
         continuar = false;
       }
       break;
@@ -75,10 +72,9 @@ function revisar() {
         }
       }
       if (contador === contenido.value.length){
-        alert("Siga");
         continuar = true;
       } else {
-        alert("Pare");
+        alert("Ocurrio un error");
         continuar = false;
       }
       break;
@@ -474,13 +470,86 @@ function revisar() {
         break;
       case "7":
         if (continuar===true) {
-
+            alert("ya esta en esta base");
           }
           alert(parseInt(valor))
         break;
       case "8":
         if (continuar===true) {
-
+          valor = contenido.value;
+          continuar5 = true;
+          while (continuar5) {
+            if (valor.length%4 == 0){
+              continuar5 = false;
+            } else {
+              valor = "0"+valor;
+            }
+          }
+          contador3 = 0;
+          cont = "";
+          result = "";
+          for (let d = 0; d < valor.length; d++) {
+            contador3++;
+            cont = cont + valor[d];
+            resu = ""
+            if (contador3%4==0) {
+              switch (cont) {
+                case "0000":
+                  resu = "0";
+                  break;
+                case "0001":
+                  resu = "1";
+                  break;
+                case "0010":
+                  resu = "2";
+                  break;
+                case "0011":
+                  resu = "3";
+                  break;
+                case "0100":
+                  resu = "4";
+                  break;
+                case "0101":
+                  resu = "5";
+                  break;
+                case "0110":
+                  resu = "6";
+                  break;
+                case "0111":
+                  resu = "7";
+                  break;
+                case "1000":
+                  resu = "8";
+                  break;
+                case "1001":
+                  resu = "9";
+                  break;
+                case "1010":
+                  resu = "A";
+                  break;
+                case "1011":
+                  resu = "B";
+                  break;
+                case "1100":
+                  resu = "C";
+                  break;
+                case "1101":
+                  resu = "D";
+                  break;
+                case "1110":
+                  resu = "E";
+                  break;
+                case "1111":
+                  resu = "F";
+                  break;
+                default:
+                  break;
+              }
+              result = result + resu;
+              cont = "";
+            }
+          }
+          alert(result);
         }
         break;
       default:
