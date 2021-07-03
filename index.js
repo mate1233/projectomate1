@@ -420,7 +420,56 @@ function revisar() {
         break;
       case "6":
         if (continuar===true) {
-
+          valor = contenido.value;
+          continuar4 = true;
+          while (continuar4) {
+            if (valor.length%3 == 0){
+              continuar4 = false;
+            } else {
+              valor = "0"+valor;
+            }
+          }
+          contador4 = 0;
+          cont = "";
+          result = "";
+          for (let sd = 0; sd < valor.length; sd++) {
+            contador4++;
+            cont = cont + valor[sd];
+            resu = ""
+            if (contador4%3==0) {
+              switch (cont) {
+                case "000":
+                  resu = "0";
+                  break;
+                case "001":
+                  resu = "1";
+                  break;
+                case "010":
+                  resu = "2";
+                  break;
+                case "011":
+                  resu = "3";
+                  break;
+                case "100":
+                  resu = "4";
+                  break;
+                case "101":
+                  resu = "5";
+                  break;
+                case "110":
+                  resu = "6";
+                  break;
+                case "111":
+                  resu = "7";
+                  break;
+                default:
+                  break;
+              }
+              result = result + resu;
+              cont = "";
+            }
+          }
+          alert(result);
         }
         break;
       case "7":
