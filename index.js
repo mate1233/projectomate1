@@ -428,7 +428,6 @@ function revisar() {
 
           }
           alert(parseInt(valor))
-        }
         break;
       case "8":
         if (continuar===true) {
